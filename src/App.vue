@@ -1,27 +1,25 @@
 <template>
-  <BaseLayout></BaseLayout>
+  <template v-if="route.path.startsWith('/user')">
+    <UserLayout></UserLayout>
+  </template>
+  <template v-else>
+    <BaseLayout></BaseLayout>
+  </template>
 </template>
 
 <script setup lang="ts">
 import BaseLayout from "@/layouts/BaseLayout.vue";
-import Router from "@/router";
-import { useRouter } from "vue-router";
-import { useStore } from "vuex";
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+import UserLayout from "@/layouts/UserLayout.vue";
 
-const router = useRouter();
-const store = useStore();
-const user = store.state.user.currentUser;
-router.beforeEach((to, from, next) => {
-  if (to.meta?.access === "canAdmin") {
-    if (user.roal !== "admin") {
-      next("/error");
-    }
-  } else {
-    next();
-  }
+const route = useRoute();
+const init = () => {
+  console.log("haoshuai");
+};
+
+onMounted(() => {
+  init();
 });
 </script>
-<style scoped>
-#app {
-}
-</style>
+<style scoped></style>

@@ -1,5 +1,5 @@
 <template>
-  <a-layout style="height: 400px">
+  <a-layout style="min-height: 100vh">
     <a-layout-header>
       <GlobalNav></GlobalNav>
     </a-layout-header>
@@ -15,7 +15,7 @@ import GlobalNav from "@/components/GlobalNav.vue";
 <style scoped>
 .footer {
   background-color: skyblue;
-  position: absolute;
+  position: sticky;
   padding: 20px;
   left: 0;
   bottom: 0;
