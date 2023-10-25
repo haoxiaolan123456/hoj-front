@@ -14,7 +14,6 @@ import GlobalNav from "@/components/GlobalNav.vue";
 </script>
 <style scoped>
 .footer {
-  background-color: skyblue;
   position: sticky;
   padding: 20px;
   left: 0;

@@ -75,14 +75,16 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import ing from "@/assets/login.svg";
-import { UserControllerService } from "../../../generated";
+import { UserControllerService } from "@/service";
 import router from "@/router";
 import store from "@/store";
-import message from "@arco-design/web-vue/es/message"
+import message from "@arco-design/web-vue/es/message";
+
 const handleSubmit = async () => {
   const res = await UserControllerService.userLoginUsingPost(form);
   if (res.code == 0) {
     await store.dispatch("/user/getCurrentUser");
+    message.success(res.message);
     router.push({
       path: "/",
     });

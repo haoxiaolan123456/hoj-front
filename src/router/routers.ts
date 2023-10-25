@@ -1,11 +1,12 @@
 import { RouteRecordRaw } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
+import HomeView from "@/views/TestView.vue";
 import ErrorMsg from "@/views/ErrorMsg.vue";
 import AdminView from "@/views/AdminView.vue";
 import accesslist from "@/access/access";
 import AboutView from "@/views/AboutView.vue";
 import UserLayout from "@/layouts/UserLayout.vue";
 import UserLoginView from "@/views/user/UserLoginView.vue";
+import AddQuestionView from "@/views/question/AddQuestionView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -34,6 +35,12 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       access: accesslist.ADMIN,
     },
+  },
+
+  {
+    path: "/addquest",
+    name: "添加题目",
+    component: AddQuestionView,
   },
 ];
 

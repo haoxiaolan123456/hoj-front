@@ -1,5 +1,5 @@
 import { StoreOptions } from "vuex";
-import { UserControllerService } from "../../generated";
+import { UserControllerService } from "@/service";
 import accesslist from "@/access/access";
 import store from "@/store/index";
 

@@ -12,6 +12,7 @@ import BaseLayout from "@/layouts/BaseLayout.vue";
 import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import UserLayout from "@/layouts/UserLayout.vue";
+import MdEdit from "@/components/MdEditor.vue";
 
 const route = useRoute();
 const init = () => {
