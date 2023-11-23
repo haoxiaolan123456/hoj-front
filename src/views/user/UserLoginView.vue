@@ -20,7 +20,7 @@
           >
             <a-form-item
               field="userAccount"
-              hide-asterisk="true"
+              :hide-asterisk=true
               :rules="[{ required: true, message: '用户名不能为空' }]"
             >
               <a-input v-model="form.userAccount" placeholder="请输入账号">
@@ -32,11 +32,12 @@
 
             <a-form-item
               field="userPassword"
-              hide-asterisk="true"
+              :hide-asterisk=true
               :rules="[{ required: true, message: '用户名不能为空' }]"
             >
               <a-input-password
                 v-model="form.userPassword"
+                autocomplete="off"
                 placeholder="请输入密码"
               >
                 <template #prefix>
@@ -56,15 +57,9 @@
             </a-form-item>
 
             <a-form-item>
-              <a-button long>注册</a-button>
+              <a-button long @click="register">注册</a-button>
             </a-form-item>
 
-            <a-form-item>
-              <a-button
-                @click="$refs.formRef.resetFields(['userName', 'password'])"
-                >重置
-              </a-button>
-            </a-form-item>
           </a-form>
         </div>
       </a-col>
@@ -79,12 +74,11 @@ import { UserControllerService } from "@/service";
 import router from "@/router";
 import store from "@/store";
 import message from "@arco-design/web-vue/es/message";
-
+// 登录
 const handleSubmit = async () => {
   const res = await UserControllerService.userLoginUsingPost(form);
   if (res.code == 0) {
-    await store.dispatch("/user/getCurrentUser");
-    message.success(res.message);
+    await store.dispatch("user/getCurrentUser");
     router.push({
       path: "/",
     });
@@ -97,6 +91,15 @@ const form = reactive({
   userAccount: "",
   userPassword: "",
 });
+
+
+
+const register = () => {
+  router.push({
+    path:"/user/register"
+  })
+}
+
 </script>
 
 <style scoped>

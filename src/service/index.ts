@@ -14,6 +14,7 @@ export type { BaseResponse_Page_QuestionVO_ } from './models/BaseResponse_Page_Q
 export type { BaseResponse_Page_SubmitQuestionVO_ } from './models/BaseResponse_Page_SubmitQuestionVO_';
 export type { BaseResponse_Page_User_ } from './models/BaseResponse_Page_User_';
 export type { BaseResponse_Page_UserVO_ } from './models/BaseResponse_Page_UserVO_';
+export type { BaseResponse_Question_ } from './models/BaseResponse_Question_';
 export type { BaseResponse_QuestionVO_ } from './models/BaseResponse_QuestionVO_';
 export type { BaseResponse_string_ } from './models/BaseResponse_string_';
 export type { BaseResponse_User_ } from './models/BaseResponse_User_';
@@ -28,6 +29,7 @@ export type { Page_QuestionVO_ } from './models/Page_QuestionVO_';
 export type { Page_SubmitQuestionVO_ } from './models/Page_SubmitQuestionVO_';
 export type { Page_User_ } from './models/Page_User_';
 export type { Page_UserVO_ } from './models/Page_UserVO_';
+export type { Question } from './models/Question';
 export type { QuestionAddRequest } from './models/QuestionAddRequest';
 export type { QuestionEditRequest } from './models/QuestionEditRequest';
 export type { QuestionQueryRequest } from './models/QuestionQueryRequest';
@@ -47,6 +49,5 @@ export type { UserVO } from './models/UserVO';
 
 export { FileControllerService } from './services/FileControllerService';
 export { QuestionControllerService } from './services/QuestionControllerService';
-export { SubmitQuestionControllerService } from './services/SubmitQuestionControllerService';
 export { UserControllerService } from './services/UserControllerService';
 export { WxMpControllerService } from './services/WxMpControllerService';

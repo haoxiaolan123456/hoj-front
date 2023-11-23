@@ -1,10 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import routes from "@/router/routers";
-import UserLayout from "@/layouts/UserLayout.vue";
-import BaseLayout from "@/layouts/BaseLayout.vue";
 import UserLoginView from "@/views/user/UserLoginView.vue";
 import UserRegisterView from "@/views/user/UserRegisterView.vue";
-
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
@@ -20,7 +17,7 @@ const router = createRouter({
         },
         {
           path: "/user/register",
-          name: "用户",
+          name: "注册",
           component: UserRegisterView,
         },
       ],

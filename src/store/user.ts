@@ -1,12 +1,14 @@
 import { StoreOptions } from "vuex";
 import { UserControllerService } from "@/service";
 import accesslist from "@/access/access";
-import store from "@/store/index";
 
 export default {
   namespaced: true,
   state: () => ({
-    currentUser: {},
+    currentUser: {
+      userName:"未登录",
+      userRole:accesslist.NOT_LOGIN,
+    },
   }),
   mutations: {
     //state状态，payload传递过来的参数
@@ -22,7 +24,7 @@ export default {
         commit("updateUser", res.data);
       } else {
         commit("updateUser", {
-          ...store.state.user.currentUser,
+          userName:"未登录",
           userRole: accesslist.NOT_LOGIN,
         });
       }

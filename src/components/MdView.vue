@@ -1,5 +1,5 @@
 <template>
-  <Editor :value="value" :plugins="plugins" @change="handleChange" />
+  <Viewer :value="value" :plugins="plugins"/>
 </template>
 <script setup lang="ts">
 import gfm from "@bytemd/plugin-gfm";
@@ -10,14 +10,10 @@ import { ref, withDefaults, defineProps } from "vue";
 
 interface Props {
   value: string;
-  handleChange: (v: string) => void;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   value: () => "",
-  handleChange: (v: string) => {
-    console.log(v);
-  },
 });
 
 const plugins = [

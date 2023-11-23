@@ -4,11 +4,9 @@ import accesslist from "@/access/access";
 import checkaccess from "@/access/checkAccess";
 
 router.beforeEach(async (to, from, next) => {
-  if (!store.state.user.currentUser.userRole) {
-    try {
-      await store.dispatch("user/getCurrentUser");
-    } catch (Error) {}
-  }
+  try {
+    await store.dispatch("user/getCurrentUser");
+  } catch (Error) {}
 
   const needAccess = to.meta?.access ?? accesslist.NOT_LOGIN;
   //跳转的页面需要用户登录的情况

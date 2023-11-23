@@ -7,15 +7,17 @@ import type { JudegConfig } from './JudegConfig';
 import type { UserVO } from './UserVO';
 
 export type QuestionVO = {
-    acceptednum?: number;
+    acceptedNum?: number;
+    answer?: string;
     content?: string;
-    createtime?: string;
+    createTime?: string;
     id?: number;
-    judgeconfig?: JudegConfig;
-    submitnum?: number;
+    judgeCase?: string;
+    judgeConfig?: JudegConfig;
+    submitNum?: number;
     tags?: Array<string>;
     title?: string;
-    updatetime?: string;
+    updateTime?: string;
     user?: UserVO;
-    userid?: number;
+    userId?: number;
 };

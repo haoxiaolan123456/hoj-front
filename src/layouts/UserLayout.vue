@@ -1,5 +1,5 @@
 <template>
-  <dvi id="usrlayout">
+  <div id="usrlayout">
     <a-layout style="min-height: 100vh" class="conent">
 <!--          <a-layout-header>-->
 <!--            用户界面-->
@@ -7,9 +7,9 @@
       <a-layout-content>
         <router-view />
       </a-layout-content>
-      <a-layout-footer class="footer">Footer</a-layout-footer>
+      <a-layout-footer class="footer">hoj</a-layout-footer>
     </a-layout>
-  </dvi>
+  </div>
 </template>
 <script setup></script>
 <style scoped>

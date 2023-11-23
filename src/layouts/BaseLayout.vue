@@ -6,7 +6,7 @@
     <a-layout-content>
       <router-view />
     </a-layout-content>
-    <a-layout-footer class="footer">Footer</a-layout-footer>
+    <a-layout-footer class="footer">hoj</a-layout-footer>
   </a-layout>
 </template>
 <script setup>
